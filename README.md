@@ -1,3 +1,5 @@
+![CI](https://github.com/amarpit33/rate-limiter/actions/workflows/ci.yml/badge.svg)
+
 # Rate Limiter — Python + Redis
 
 Token bucket + sliding window rate limiter with REST API.
