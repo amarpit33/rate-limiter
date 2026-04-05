@@ -5,7 +5,7 @@
 Token bucket + sliding window rate limiter with REST API.
 
 **Built with:** Python · FastAPI · Redis · Docker  
-**Status:** In Progress
+**Status:** ✅ Complete
 
 ---
 
@@ -17,6 +17,20 @@ Implements two rate limiting algorithms:
 - **Sliding Window** — counts requests in a rolling time window per client. More precise, prevents boundary exploits of fixed windows.
 
 Redis is the backing store so rate limit state is shared across all API instances — enabling stateless, horizontally scalable deployments.
+
+---
+
+## Design Decisions
+
+**Why Redis?**  
+Rate limit state must be shared across all API instances for horizontal scaling. Redis atomic operations (`INCR`, `EXPIRE`) prevent race conditions without explicit locking.
+
+**Token Bucket vs Sliding Window — when to use which?**
+- Token Bucket: better for bursty traffic (APIs, mobile clients)
+- Sliding Window: more precise, prevents boundary-exploit attacks
+
+**Why stateless API instances?**  
+All state lives in Redis — API pods can scale horizontally without sticky sessions or shared memory.
 
 ---
 
