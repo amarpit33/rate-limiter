@@ -1,0 +1,24 @@
+{
+  "replicas": 3,
+  "algorithm": "token_bucket",
+  "concurrency": 64,
+  "client_pool": 100,
+  "duration_s": 30.02,
+  "requests_completed": 83426,
+  "throughput_rps": 2779.1,
+  "latency_ms": {
+    "p50": 21.35,
+    "p95": 43.0,
+    "p99": 57.76,
+    "max": 122.98,
+    "mean": 23.0
+  },
+  "allowed": 34288,
+  "denied": 49138,
+  "errors": {},
+  "over_admission_check": {
+    "max_allowed_single_client": 369,
+    "theoretical_max_per_client": 430.2,
+    "passed": true
+  }
+}

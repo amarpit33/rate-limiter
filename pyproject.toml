@@ -1,0 +1,20 @@
+[project]
+name = "rate-limiter"
+version = "2.0.0"
+description = "Distributed token bucket and sliding window rate limiting on Redis, exposed through FastAPI."
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["app"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC"]
