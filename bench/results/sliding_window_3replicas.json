@@ -1,0 +1,19 @@
+{
+  "replicas": 3,
+  "algorithm": "sliding_window",
+  "concurrency": 64,
+  "client_pool": 100,
+  "duration_s": 30.0,
+  "requests_completed": 90917,
+  "throughput_rps": 3030.2,
+  "latency_ms": {
+    "p50": 19.95,
+    "p95": 38.0,
+    "p99": 49.76,
+    "max": 73.91,
+    "mean": 21.1
+  },
+  "allowed": 27733,
+  "denied": 63184,
+  "errors": {}
+}
